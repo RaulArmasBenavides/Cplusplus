@@ -1,0 +1,74 @@
+#include<iostream>
+using namespace std;
+//Asignacion de memoria dinamica
+/* Escribir un programa que almacene en un vector numeros
+enteros y luego lo muestre por pantalla*/
+void Lectura(int *x,int m)
+{ int i;
+  cout<<"\nLectura datos"<<endl;
+  for(i=0;i<m;i++)
+  { cout<<"A["<<i<<"]=";
+    cin>>*(x+i);
+  }
+}
+void Print(int *x,int m)
+{ int i;
+  cout<<"\nMostrando el Vector"<<endl;
+  for(i=0;i<m;i++)
+   cout<<"A["<<i<<"]="<<*(x+i)<<endl;
+}
+int main()
+{ int n, *a;
+  cout<<"Numero de elementos:";cin>>n;
+  a=new int[n];
+  Lectura(a,n);Print(a,n);
+}
+
+
+/* Escribir un programa que almacene en una lista el
+codigo y la nota de la tercera practica que obtendra en
+el curso de Algortimos y Estructura de Datos
+*/
+#include<iostream>
+#include<string.h>
+#include<stdio.h>
+using namespace std;
+struct datos
+{ char cod[10]; //Almacena el codigo del alumno
+  int nt; // Almacena la nota
+  datos *sig;//Almacena la direccion del siguiente nodo
+};
+//Creando el alias
+typedef datos *pt;
+//defincion de las funciones
+void InsertarInicio(pt &p)
+{ pt q;
+     for(;;)
+     {q=new datos;
+       cout<<"Codigo:";fflush(stdin);gets(q->cod);
+       if(strlen(q->cod)==0)
+         break;
+       cout<<"Nota:";cin>>q->nt;
+       if(p==NULL)
+         q->sig=NULL;
+       else
+         q->sig=p;
+        p=q;
+     }
+
+}
+void VerLista(pt z)
+{  pt x;
+   x=z;
+   cout<<endl;
+   while(x!=NULL)
+   { cout<<x->cod<<"->"<<x->nt<<"->";
+     x=x->sig;
+   }
+   cout<<"NULL"<<endl;
+}
+
+int main()
+{  pt A=NULL;
+   InsertarInicio(A);VerLista(A);
+}

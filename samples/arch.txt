@@ -1,0 +1,72 @@
+#include<iostream>
+using namespace std;
+//Declarando la clase padre
+class ruso
+{ private:
+    int a,b;
+  public:
+    void Leer();
+    void Print();
+    void SetDatos(int,int);
+    int GetDatos(int &);
+};
+//Declarando la clase hija
+class producto:public ruso
+{ private:
+    int p;
+  public:
+    void calcular();
+    void VerResultado();
+};
+//Definicion de las funciones miembros de la clase padre
+void ruso::Leer()
+{ do
+   {  cout<<endl<<"Ingrese 2 numeros enteros:";
+      cin>>a>>b;
+      if((a<=0) || (b<=0))
+         cout<<"\a\a\aError...."<<endl;
+   }while((a<=0) || (b<=0));
+}
+
+void ruso::Print()
+{  cout<<endl;cout<<"a = "<<a<<endl;
+   cout<<"b = "<<b<<endl;
+}
+void ruso::SetDatos(int z, int w)
+{ a=z; b=w;
+}
+
+int ruso::GetDatos(int &t)
+{ t=b;
+  return a;
+}
+
+//Funcion miembro de la clase hija
+void producto::calcular()
+{  int x,y;
+   x=GetDatos(y);
+   p=0;
+   while(x>0)
+   {  if((x%2)!=0)
+       p=p+y;
+     x/=2;
+     y*=2;
+   }
+}
+
+void producto::VerResultado()
+{ Print();
+  cout<<"El producto es = "<<p<<endl;
+}
+//Funcion principal
+int main()
+{ producto Q;int a1,b1;
+  Q.Leer();
+  Q.calcular();
+  Q.VerResultado();
+  Q.SetDatos(10,15);
+  a1=Q.GetDatos(b1);  cout<<"Nuevos valores cambiados"<<endl;
+  cout<<"a="<<a1<<endl; cout<<"b="<<b1<<endl;
+ // Q.Print();
+}
+

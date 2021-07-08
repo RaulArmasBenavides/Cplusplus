@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1414082913 source:d:\14170110_espinoza\py_articulo\articulo.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	"articulo.h"
+
+1414082562 d:\14170110_espinoza\py_articulo\articulo.h
+
+1414082562 source:d:\14170110_espinoza\py_articulo\main.cpp
+	<iostream>
+	"articulo.h"
+

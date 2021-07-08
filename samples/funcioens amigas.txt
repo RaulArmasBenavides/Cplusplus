@@ -1,0 +1,134 @@
+#include<iostream>
+using namespace std;
+//Declaracion de la clase
+class paralelepipedo
+{  private:
+    int a,b,c;
+   public:
+    paralelepipedo(int x, int y, int z);
+    ~paralelepipedo();
+    friend void Ingresar(paralelepipedo &q);//Funcion amiga
+    void Mostrar();
+    void AreaTotal(int &At);
+    friend int Volumen(paralelepipedo p);//Funcion amiga
+};
+//Implentando las funciones miembro de la clase
+paralelepipedo::paralelepipedo(int x, int y, int z)
+{ a=x; b=y; c=z;
+}
+paralelepipedo::~paralelepipedo()
+{
+}
+
+void paralelepipedo::Mostrar()
+{ cout<<endl<<"a="<<a<<endl;
+  cout<<"b="<<b<<endl;
+  cout<<"c="<<c<<endl<<endl;
+}
+
+void paralelepipedo::AreaTotal(int &At)
+{ At=2*(a*b+a*c+b*c);
+}
+//Implementando las funciones amigas
+void Ingresar(paralelepipedo &q)
+{  cout<<endl<<"Ingrese nuevo valor de a:";cin>>q.a;
+   cout<<"Ingrese nuevo valor de b:";cin>>q.b;
+   cout<<"Ingrese nuevo valor de c:";cin>>q.c;
+   cout<<endl;
+}
+
+int Volumen(paralelepipedo p)
+{ return p.a*p.b*p.c;
+}
+
+//Funcion principal
+int main()
+{ int Ar;
+  paralelepipedo Z(10,8,5);// Crea el objeto Z y llama al constructor
+  Z.Mostrar();
+  Z.AreaTotal(Ar);
+  cout<<"Area total es = "<<Ar<<endl;
+  cout<<"Volumen es = "<<Volumen(Z)<<endl;
+  cout<<endl<<"Probando para nuevos datos"<<endl;
+  Ingresar(Z);// Llama a la funcion amiga
+  Z.Mostrar();
+  Z.AreaTotal(Ar);
+  cout<<"Area total es = "<<Ar<<endl;
+  cout<<"Volumen es = "<<Volumen(Z)<<endl;
+}
+
+
+
+
+#include<iostream>
+using namespace std;
+//Declaracion de la clase
+class paralelepipedo
+{  private:
+    int a,b,c;
+   public:
+    paralelepipedo(int x, int y, int z);
+    ~paralelepipedo();
+    paralelepipedo(const paralelepipedo &t);//Constructor copia, sirve para crear un objeto a partir
+    // de uno ya existente
+    friend void Ingresar(paralelepipedo &q);//Funcion amiga
+    void Mostrar();
+    void AreaTotal(int &At);
+    friend int Volumen(paralelepipedo p);//Funcion amiga
+};
+//Implentando las funciones miembro de la clase
+paralelepipedo::paralelepipedo(int x, int y, int z)
+{ a=x; b=y; c=z;
+}
+paralelepipedo::~paralelepipedo()
+{
+}
+
+paralelepipedo::paralelepipedo(const paralelepipedo &t)
+{ a=t.a; b=t.b; c=t.c;
+}
+
+void paralelepipedo::Mostrar()
+{ cout<<endl<<"a="<<a<<endl;
+  cout<<"b="<<b<<endl;
+  cout<<"c="<<c<<endl<<endl;
+}
+
+void paralelepipedo::AreaTotal(int &At)
+{ At=2*(a*b+a*c+b*c);
+}
+//Implementando las funciones amigas
+void Ingresar(paralelepipedo &q)
+{  cout<<endl<<"Ingrese nuevo valor de a:";cin>>q.a;
+   cout<<"Ingrese nuevo valor de b:";cin>>q.b;
+   cout<<"Ingrese nuevo valor de c:";cin>>q.c;
+   cout<<endl;
+}
+
+int Volumen(paralelepipedo p)
+{ return p.a*p.b*p.c;
+}
+
+//Funcion principal
+int main()
+{ int Ar;
+  paralelepipedo Z(10,8,5);// Crea el objeto Z y llama al constructor
+  Z.Mostrar();
+  Z.AreaTotal(Ar);
+  cout<<"Area total es = "<<Ar<<endl;
+  cout<<"Volumen es = "<<Volumen(Z)<<endl;
+  cout<<endl<<"Probando para nuevos datos"<<endl;
+  Ingresar(Z);// Llama a la funcion amiga
+  Z.Mostrar();
+  Z.AreaTotal(Ar);
+  cout<<"Area total es = "<<Ar<<endl;
+  cout<<"Volumen es = "<<Volumen(Z)<<endl;
+  cout<<endl<<"Creando un objeto a partir de uno ya existente aplicando cosntructor copia"<<endl;
+  cout<<endl;
+  paralelepipedo W(Z);//Crea el objeto W y llama al constructor copia
+  W.Mostrar();
+  W.AreaTotal(Ar);
+  cout<<"Area total es = "<<Ar<<endl;
+  cout<<"Volumen es = "<<Volumen(W)<<endl;
+}
+

@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1411056437 source:d:\lab_1_14170110\py_arreglo\main.cpp
+	<iostream>
+	<cstdio>
+	"arreglo.h"
+
+1411056595 d:\lab_1_14170110\py_arreglo\arreglo.h
+

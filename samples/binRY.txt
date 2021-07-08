@@ -1,0 +1,76 @@
+/* Dado n puntos del plano x  e y, se pide escribir un programa
+ que permita realizar lo siguiente:
+ a)Leer los n puntos y guardar el el archivo puntos2d.dat. Los
+   datos a grabar sera las coordenadas y la distancia al origen
+   de coordenadas.
+ b)Listar el contenido del archivo y ademas la distancia mas
+   lejana y mas cercana al origen de coordenadas y de que puntos
+   se trata.
+ c)Copiar en el archivo "Lejana.dat" todos los puntos cuya
+   distancia al origen de coordenadas sea mayor a d.
+ d)Mostrar el contenido del archivo generado. */
+#include<iostream>
+#include<fstream>
+#include<math.h>
+#define Q reinterpret_cast <char *>
+using namespace std;
+//Definicion de las funciones
+void CapturaSalvar(ofstream &f1)
+{int x,y,n,i; float d;
+  f1.open("puntos2d.txt",ios::binary);cout<<"Numero de puntos a grabar:";cin>>n;
+  for(i=1;i<=n;i++)
+  { cout<<"Procesando punto #"<<i<<endl;
+    cout<<"Ingrese coordenadas:";cin>>x>>y;
+    d=sqrt(x*x+y*y);
+    //Guardando en el disco los datos
+    f1.write(Q(&x),sizeof(x));
+    f1.write(Q(&y),sizeof(int));
+    f1.write(Q(&d),sizeof(d));
+  }
+  f1.close();
+}
+
+void Listar(ifstream &f2)
+{ int x,y,xm,ym,x0,y0;float d,dmay=-10000,dmen=10000;
+  f2.open("puntos2d.txt",ios::binary);
+  f2.read(Q(&x),sizeof(x));
+  while(!f2.eof())
+  { f2.read(Q(&y),sizeof(int));
+    f2.read(Q(&d),sizeof(d));
+    cout<<x<<"\t"<<y<<"\t"<<d<<endl;
+    if(d>dmay)
+    { dmay=d; xm=x;ym=y;
+    }
+    if(d<dmen)
+    { dmen=d; x0=x;y0=y;
+    }
+   f2.read(Q(&x),sizeof(x));
+  }
+  f2.close();
+  cout<<endl<<"Distancia mas lejana es = "<<dmay<<endl;
+  cout<<"corresponde al punto "<<xm<<","<<ym<<endl<<endl;
+  cout<<endl<<"Distancia mas cercana es = "<<dmen<<endl;
+  cout<<"corresponde al punto "<<x0<<","<<y0<<endl<<endl;
+}
+/*
+void Copiar(ifstream &f3,ofstream &f4)
+{int x,y;float d,dato;
+  f3.open("puntos2d.dat"); f4.open("Lejana.dat");
+  cout<<"Cual es la distancia a filtrar:";cin>>dato;
+  f3>>x;
+  while(f3.peek()!=EOF)
+  { f3>>y>>d;
+    if(d>dato)
+     f4<<x<<"\t"<<y<<"\t"<<d<<endl;
+   f3>>x;
+  }
+  f3.close();f4.close();
+}*/
+//Funcion principal
+int main()
+{ ofstream arch1,arch4; ifstream arch2,arch3;
+  //CapturaSalvar(arch1);
+  Listar(arch2);
+  //Copiar(arch3,arch4);
+}
+

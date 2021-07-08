@@ -1,0 +1,20 @@
+2. Colores. Trabajando con variables.
+adelante
+Cambiar colores
+
+Antes de empezar con una de las herramientas más usadas de la programación 
+como son las variables vamos a aprender a cambiar los colores tanto del texto 
+en nuestro programa como del fondo. Para ello usaremos el código color 
+numeroletra, y donde pone numero pondremos el color de fondo de la ventana 
+del programa y donde pone letra el color del texto. Las correspondencias 
+entres los números y letras y los colores son las siguientes:
+
+0 = Negro	1 = Azul	2 = Verde
+3 = Aguamarina	4 = Rojo	5 = Púrpura
+6 = Amarillo	7 = Blanco	8 = Gris
+9 = Azul claro	 	 
+A = Verde claro	B = Aguamarina	C = Rojo
+D = Púrpura	E = Amarillo	F = Blanco
+Vamos a hacer por ejemplo que en nuestro primer programa al principio se 
+ponga el fondo rojo y las letras amarillas, y que cuando vaya a aparecer 
+el segundo párrafo aparezca el fondo negro y las letras color aguamarina.

@@ -1,0 +1,39 @@
+#include<iostream>
+#include<fstream>
+#include<stdlib.h>
+using namespace std;
+//Funcion LeerGrabar
+void LeerGrabar(ofstream &f1)
+{ int n,a,i;
+  f1.open("numeros.txt");
+  cout<<"Cuanto numeros desea:"; cin>>n;
+  cout<<"A partir de que numero:";cin>>a;
+  for(i=1;i<=n;i++,a++)
+    f1<<a<<endl;
+  f1.close();
+}
+
+void Print(ifstream &f2)
+{ int s=0,a;
+  f2.open("numeros.txt");
+   if(f2.fail()==true)
+   {  cout<<"Error..., verifique el archivo"<<endl;
+      exit(1);
+   }
+  cout<<"El archivo se abrio con exito"<<endl<<endl;
+  f2>>a;
+  for(;!f2.eof();)
+   { cout<<a<<" ";
+     s=s+a;
+     f2>>a;
+   }
+  cout<<endl<<"La suma es = "<<s<<endl;
+  f2.close();
+}
+
+int main()
+{  ofstream file1; ifstream file2;
+   //LeerGrabar(file1);
+   Print(file2);
+}
+

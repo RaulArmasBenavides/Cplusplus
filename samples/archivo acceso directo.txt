@@ -1,0 +1,49 @@
+#include<iostream>
+#include<fstream>
+#define T reinterpret_cast <char *>
+using namespace std;
+struct numero
+{ int n;
+  int s;
+};
+
+void Grabar(ofstream &f1)
+{ numero p; int n,m,x,i,s;
+  f1.open("datos.dat",ios::binary);
+  cout<<"Cuantos datos:";cin>>n;
+  for(i=1;i<=n;i++)
+  { cout<<"numero:";cin>>m;
+     s=0; x=m;
+    while(x>0)
+    { s=s+x%10;
+      x/=10;
+    }
+   f1.write(T(&m),sizeof(m));
+   f1.write(T(&s),sizeof(s));
+  }
+  f1.close();
+}
+
+void Listar(ifstream &f2)
+{ numero p;int m,nr,n;
+  f2.open("datos.dat",ios::binary);
+  f2.seekg(0,ios::end);
+  m=f2.tellg();
+  nr=m/sizeof(p);
+  cout<<"Que registro desea ver:";cin>>n;
+  if(n>0 && n<nr)
+  { f2.seekg((n-1)*sizeof(p));
+    f2.read(T(&p.n),sizeof(p.n));
+   f2.read(T(&p.s),sizeof(p.s));
+   cout<<p.n<<"\t"<<p.s<<endl;
+  }
+
+  f2.close();
+}
+
+int main()
+{ ofstream arch1; ifstream arch2;
+  //Grabar(arch1);
+  Listar(arch2);
+}
+

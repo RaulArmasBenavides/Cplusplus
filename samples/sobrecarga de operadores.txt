@@ -1,0 +1,100 @@
+#include>iostream>
+using namespace std;
+const int N=50, M=5
+//Declaracion de la estructura
+struct vend
+{  char codigo[10],apenom[40];
+   int vta[N][M];
+};
+//Declarando la clase
+class Ventas
+{  private:
+      vend x[N];
+      char cod[10];
+      int total[N];
+      int n;
+   private:
+     Ventas(int m);
+     ~Ventas();
+     void CapturaDatos();
+     void Muestra();
+     void operator!();
+     void operator^(int t);
+     void operator*(int v);
+     bool FindVendedor(char c[],int &z);
+     void PrintVendedor(int k);
+};
+
+
+
+#include<iostream>
+using namespace std;
+//Declaracion de la clase
+class punto2d
+{ private:
+    int x,y;
+  public:
+    punto2d(int n, int m);
+    punto2d(); //Constructor por defecto
+    ~punto2d();
+    void Print();
+    void SetPuntoX(int z);
+    punto2d operator+(punto2d q);
+    void operator++();//No requiere parametro, porque esta como prefijo el operador
+   void operator++(int);//Si requiere parametro, porque esta como sufijo el operador
+    int GetPuntoX();
+};
+//Definiendo las funciones miembro de la clase punto2d
+punto2d::punto2d(int n, int m)
+{ x=n; y=m;
+}
+punto2d::punto2d()
+{ x=0; y=0;
+}
+punto2d::~punto2d()
+{
+}
+void punto2d::Print()
+{ cout<<"("<<x<<","<<y<<")"<<endl;
+}
+
+void punto2d::SetPuntoX(int z)
+{  x=z;
+}
+int punto2d::GetPuntoX()
+{  return x;
+}
+punto2d punto2d::operator+(punto2d q)
+{  punto2d p;
+   p.x=x+q.x;
+   p.y=y+q.y;
+   return p;
+}
+void punto2d::operator++()
+{ ++x;
+  ++y;
+}
+
+void punto2d::operator++(int z)
+{ ++x;
+  ++y;
+}
+//Funcion principal
+int main()
+{  punto2d A(10,5),B(8,9),C;
+   cout<<"A=";A.Print();
+   cout<<"B=";B.Print();
+   cout<<"C=";C.Print();
+   C=A+B;
+   cout<<endl<<"C=";C.Print();
+   cout<<"Otra manera de invocar a la funcion operador"<<endl;
+   C=A.operator+(B);
+   cout<<endl<<"C=";C.Print();
+   ++A; cout<<"Nuevos valores del objeto A"<<endl;
+   cout<<"A=";A.Print();
+   B++; cout<<"Nuevos valores del objeto B"<<endl;
+   cout<<"B=";B.Print();
+   A.SetPuntoX(30);
+   cout<<"Nuevo valor de X del objeto A es = "<<A.GetPuntoX()<<endl;
+}
+

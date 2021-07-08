@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1416500181 source:d:\lab_3_14170110\py_pregunta2\main.cpp
+	<iostream>
+	"pregunta2.h"
+
+1416498756 d:\lab_3_14170110\py_pregunta2\pregunta2.h
+
+1416499869 source:d:\lab_3_14170110\py_pregunta2\pregunta2.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	"pregunta2.h"
+

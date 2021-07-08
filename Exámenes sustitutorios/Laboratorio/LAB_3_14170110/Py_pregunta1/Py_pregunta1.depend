@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1416501299 source:d:\lab_3_14170110\py_pregunta1\main.cpp
+	<iostream>
+	"matriz.h"
+
+1416501323 d:\lab_3_14170110\py_pregunta1\matriz.h
+
+1416501337 source:d:\lab_3_14170110\py_pregunta1\matriz.cpp
+	<iostream>
+	"matriz.h"
+
