@@ -1,4 +1,7 @@
+//declaracion de librerías
 #include<iostream>
+
+//definición de clases
 class cuenta{
 public:
     cuenta();
@@ -8,10 +11,12 @@ public:
 private:
     float saldo;
 };
+
 cuenta :: cuenta()
 {
     saldo=0.0;
 }
+
 float cuenta :: saldo_cuenta()
 {
     return saldo;
