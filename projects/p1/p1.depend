@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1630814603 source:c:\users\raúl\documents\rmab\cplusplus\projects\p1\main.cpp
+	<iostream>
+	"arreglo.h"
+
+1630814330 source:c:\users\raúl\documents\rmab\cplusplus\projects\p1\arreglo.cpp
+	<iostream>
+	<fstream>
+	"arreglo.h"
+
+1630813608 c:\users\raúl\documents\rmab\cplusplus\projects\p1\arreglo.h
+	<iostream>
+	<ctime>
+	<fstream>
+

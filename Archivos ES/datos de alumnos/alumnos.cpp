@@ -28,9 +28,10 @@ int main()
       cin.get();//esperar la entrada estandar
       exit(1);//sale y devuelve el control al sistema operativo
   }
-   while(!p2.eof())
+      //while(!p2.eof())
    for(int i=1;i<=n;i++)
   {
+
       cout<<"Ingrese datos del alumno #"<<i<<endl;
       cout<<"Ingrese codigo"<<endl;fflush(stdin);
       gets(a[i].cod);
