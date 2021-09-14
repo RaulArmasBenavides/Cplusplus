@@ -94,8 +94,6 @@ bool VectorCapicula(int a , int b ,int X[], int &k)
             k++;
         }
     }
-
-
     int longitud=GetSize(X);
     if(longitud > 0)
     {
