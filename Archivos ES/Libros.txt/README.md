@@ -10,5 +10,6 @@ Notice that in this case we will use spanish configuration
 setlocale(LC_CTYPE,"Spanish");
 
 
-This method can be used in order to read. Take this model.
+
 ![register](https://user-images.githubusercontent.com/20383126/133275266-d0ecaa19-ed6d-40a4-8b5b-27e8197b51fd.JPG)
+This method can be used in order to read. Take this model.
