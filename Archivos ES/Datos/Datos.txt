@@ -1,0 +1,10 @@
+Juan_Manuel Ramirez_Prado 22 14/05/1999 Masculino S
+Manuela Andrade_Feijo 45 18/12/1976 Femenino C
+Rodolfo_Miguel Zapata_Lara 16 28/07/2005 Masculino S
+Nadia_Luz Arteaga_Salazar 30 02/03/2991 Femenino C
+Katy_Clara Asenjo_Cubas 21 22/08/2000 Femenino S
+Andres Sasieta_Marin 35 04/10/1986 Masculino S
+Ramiro_Jesus Benavente_Martinez 23 21/04/1998 C
+Gilmer_Arturo Caicedo_Caceres 25 30/01/1996 S
+Fiorela Cotrina_Paredes 34 28/02/1987 Femenino D
+Roberto_Eleazar Estrada_Anta 50 28/02/1971 Masculino V
