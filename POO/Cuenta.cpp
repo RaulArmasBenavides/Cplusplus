@@ -7,7 +7,7 @@ public:
     cuenta();
     float saldo_cuenta();
     float retirar(float);
-    void depositar(float);
+    void  depositar(float);
 private:
     float saldo;
 };

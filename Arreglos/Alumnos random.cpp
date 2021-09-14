@@ -43,12 +43,10 @@ void Gestiona(int nt[],int a[],int d[],int n,int p,int q)
     {
         if(nt[i]>=10.5)
             {
-            a[p]=nt[i];
-            p++;}
+            a[p]=nt[i]; p++;}
         else
            {
-           d[q]=nt[i];q++;
-           }
+           d[q]=nt[i];q++; }
     }
      cout<<"Los aprobados son :"<<endl;
              for(int t=0;t<p;t++)
