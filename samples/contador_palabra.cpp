@@ -15,7 +15,7 @@ int main()
         if(s1[i]==' ' && s1[i+1] != ' ')
         nroPalabras=nroPalabras+1;
     }
-    x=nroPalabras;
+    x=nroPalabras+1;
     cout<<"Numero de palabras " <<x<<endl;
     return 0;
 }

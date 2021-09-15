@@ -31,8 +31,11 @@ void Correo :: GenerarCorreo()
     for(int i=1;i<=3;i++)
     {
     cout<<endl;
-    cout<<"Oportunidad "<<i<<" de "<<3<<endl;
-    cout<<"Ingrese la contraseña"<<endl;
+    if(i != 1)
+    {
+         cout<<"Oportunidad "<<i<<" de "<<3<<endl;
+    }
+    cout<<"Ingrese la nueva contraseña"<<endl;
     char c1=getch();
     while(c1 !=13) // !=13 es para que pare de captar los caracteres cuando presionemos enter
     {
@@ -63,10 +66,12 @@ void Correo :: GenerarCorreo()
 }
 //funcion principal
 int main()
-{ //Creación del objeto
+{
+    // Configuracion
+    setlocale(LC_CTYPE,"Spanish");//Creación del objeto
     Correo correo;
   //invocacion de los metodos
-   correo.LeerUsuario();
-   correo.GenerarCorreo();
+    correo.LeerUsuario();
+    correo.GenerarCorreo();
 return 0;
 }

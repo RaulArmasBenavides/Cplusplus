@@ -125,49 +125,52 @@ void Generar(char c[N],char nc[N][N])
 }
 //implementacion de la funcion principal
 int main()
-{ //declaracion de las variables a utilizar en todos los ejemplos
+{
+  //Configuracion
+  setlocale(LC_CTYPE,"Spanish");
+  //declaracion de las variables a utilizar en todos los ejemplos
   char a1[N],a2[N];
   char x,y;
   float n;
   int numero,sistema;
-  cout<<"Ejemplo que evalua si dos cadenas son circulares (ejm aviacion y cionavia)"<<endl;
-  cout<<"Ingrese primera cadena"<<endl; gets(a1);
-  cout<<"Ingrese segunda cadena"<<endl; gets(a2);
+     cout<<"Ejemplo que evalua si dos cadenas son circulares (ejm aviacion y cionavia)"<<endl;
+     cout<<"Ingrese primera cadena"<<endl; gets(a1);
+     cout<<"Ingrese segunda cadena"<<endl; gets(a2);
   if(CadenasCirculares(a1,a2)==true)
-    cout<<"Son circulares "<<endl;
+     cout<<"Son circulares "<<endl;
   else
-    cout<<"No son circulares"<<endl;
- cout<<"**************************************************************"<<endl;
- cout<<"Redondeo"<<endl;
- cout<<"Ingrese un numero para redondear "<<endl;fflush(stdin);cin>>n;
- cout<<"EL numero redondeado es "<<RedondearNumero(n)<<endl;fflush(stdin);
- cout<<"Este algoritmo sirve para los ejemplos de notas evitando la funcion floor"<<endl;
- cout<<"***************************************************************"<<endl;
- cout<<"Algoritmo para saber cuantas consonantes hay entre dos caracteres"<<endl;
- cout<<"Ingrese un primer caracter"<<endl;fflush(stdin);cin>>x;
- cout<<"Ingrese un segundo caracter"<<endl;fflush(stdin);cin>>y;
- Ejemplo1(x,y);
- cout<<"*****************************************************************"<<endl;
- char cade[N];
- cout<<"ejemplo consiste en una funcion que recibe una cadena de caracteres y que pase de minuscula a mayuscula en posiciones pares"<<endl;
- cout<<"Ingrese una cadena"<<endl;fflush(stdin);gets(cade);
- Ejemplo2(cade);cout<<endl; cout<<"La nueva cadena es..."<<endl;
- puts(cade);
- cout<<"************************************************"<<endl;
- char cadee[N];
- LeerCodigo1(cadee);
- cout<<"*************************************************"<<endl;
- int ano;
- cout<<"Ingrese un año para saber si es bisiesto"<<endl;cin>>ano;
- if(Bisiesto(ano)==true)
-    cout<<"Si es bisiesto"<<endl;
- else
-    cout<<"No es bisiesto"<<endl;
- cout<<"*********************************************************"<<endl;
- cout<<"Ingrese una cadena larga para separla en vector de cadenas "<<endl;
- char e[N];
- char v[N][N];
- fflush(stdin);gets(e);
- Generar(e,v);
- return 0;
+     cout<<"No son circulares"<<endl;
+     cout<<"**************************************************************"<<endl;
+     cout<<"Redondeo"<<endl;
+     cout<<"Ingrese un numero para redondear "<<endl;fflush(stdin);cin>>n;
+     cout<<"EL numero redondeado es "<<RedondearNumero(n)<<endl;fflush(stdin);
+     cout<<"Este algoritmo sirve para los ejemplos de notas evitando la funcion floor"<<endl;
+     cout<<"***************************************************************"<<endl;
+     cout<<"Algoritmo para saber cuantas consonantes hay entre dos caracteres"<<endl;
+     cout<<"Ingrese un primer caracter"<<endl;fflush(stdin);cin>>x;
+     cout<<"Ingrese un segundo caracter"<<endl;fflush(stdin);cin>>y;
+     Ejemplo1(x,y);
+     cout<<"*****************************************************************"<<endl;
+     char cade[N];
+     cout<<"ejemplo consiste en una funcion que recibe una cadena de caracteres y que pase de minuscula a mayuscula en posiciones pares"<<endl;
+     cout<<"Ingrese una cadena"<<endl;fflush(stdin);gets(cade);
+     Ejemplo2(cade);cout<<endl; cout<<"La nueva cadena es..."<<endl;
+     puts(cade);
+     cout<<"************************************************"<<endl;
+     char cadee[N];
+     LeerCodigo1(cadee);
+     cout<<"*************************************************"<<endl;
+     int ano;
+     cout<<"Ingrese un año para saber si es bisiesto"<<endl;cin>>ano;
+     if(Bisiesto(ano)==true)
+        cout<<"Si es bisiesto"<<endl;
+     else
+        cout<<"No es bisiesto"<<endl;
+     cout<<"*********************************************************"<<endl;
+     cout<<"Ingrese una cadena larga para separla en vector de cadenas "<<endl;
+     char e[N];
+     char v[N][N];
+     fflush(stdin);gets(e);
+     Generar(e,v);
+     return 0;
 }

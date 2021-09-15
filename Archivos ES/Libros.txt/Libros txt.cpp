@@ -131,7 +131,6 @@ void Imprimir(book a[], int &cantidad){
 //Funcion principal
 int main()
 {
-
   // Configuracion
   setlocale(LC_CTYPE,"Spanish");
   book a[N];

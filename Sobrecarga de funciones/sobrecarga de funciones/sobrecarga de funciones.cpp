@@ -1,4 +1,4 @@
-/* sobrecargar una funcion enigma, que cuando reciba como parámetro
+/* Sobrecargar una funcion enigma, que cuando reciba como parámetro
  un numero entero convierta un numero entero a un numero romano
  y cuando reciba como parámetro el nombre de una persona diga el numero de la
  suerte, que se calcula como el modulo de dicho numero entre 9
@@ -72,14 +72,18 @@ void Enigma(char x[])
     else
     cout<<"No hay nombre"<<endl;
 }
+
+
 //funcion principal
 int main()
 {
-//declaracion de variables
-int m;
-char nom[20];
-//invocacion de funciones
-Enigma(m);
-Enigma(nom);
-return 0;
+ // Configuracion
+  setlocale(LC_CTYPE,"Spanish");
+ //declaracion de variables
+    int m;
+    char nom[20];
+    //invocacion de funciones
+    Enigma(m);
+    Enigma(nom);
+    return 0;
 }

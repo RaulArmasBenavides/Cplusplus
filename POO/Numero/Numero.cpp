@@ -1,6 +1,10 @@
+/*
+  Permite formar un nuevo numero con el contenido del vector x y lo almacena en a,
+  si no se generó el vector x , se almacena -1 en a
+*/
+
 #include<iostream>
 using namespace std;
-
 class Numero
 { private:
  int n;
@@ -10,9 +14,9 @@ class Numero
  public:
  void Inicia(int b);
  int GetNumero();
-bool GeneraVector();
-void PrintVector();
- void NuevoNumero();//Permite formar un nuevo numero con el contenido del vector x y lo almacena en a,si no se que generó el vector x , se almacena -1 en a
+ bool GeneraVector();
+ void PrintVector();
+ void NuevoNumero();
  void GetNuevoNumero(int &z);
 };
 //Implmentacion de las funciones miemmbros de la clase
