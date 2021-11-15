@@ -19,10 +19,12 @@ void SuprimeImpares(string text, string &textimpar )
 
         if((str.length())%2 !=0)
         {
-           textimpar= textimpar+ " " + str;
+           textimpar = textimpar + " " + str;
         }
     }
 }
+
+
 int main()
 {  string text = "Un ejemplo de cadenas para pruebas";
    cout<<"original " << text;
