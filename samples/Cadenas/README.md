@@ -11,6 +11,8 @@
 Sample 02
 
 <p>In this sample, you have to show the letter on the position that you enter. If there were no letter founded, just you have to return an empty string.</p>
+
+
 ![WhatsApp Image 2021-11-14 at 18 00 34](https://user-images.githubusercontent.com/20383126/141704931-4c15197f-bab9-4f8e-802c-acec53e275ad.jpeg)
 
 ![WhatsApp Image 2021-11-14 at 18 00 34](https://user-images.githubusercontent.com/20383126/141704948-7c2d81d5-8a05-428a-9926-cae1a97ce013.jpeg)
