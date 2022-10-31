@@ -6,7 +6,7 @@
 #include<string.h>
 #include<vector>
 using namespace std;
-void obtenerPalabra(string text ,int n, string &reultado)
+void obtenerPalabra2(string text ,int n, string &reultado)
 {
     string space_delimiter = " ";
     int aux = 0 ;
@@ -35,7 +35,6 @@ void obtenerPalabra(string text ,int n, string &reultado)
         }
     }
 
-
     if(retornook != true)
     {
         //se devuelve la cadena vacía
@@ -44,8 +43,43 @@ void obtenerPalabra(string text ,int n, string &reultado)
     }
 }
 
+bool obtenerPalabra(string text ,int n, string &reultado)
+{
+    string space_delimiter = " ";
+    int aux = 0 ;
+   // textimpar ="";
+    bool retornook =false;
+    vector<string> words{};
 
+    size_t pos = 0;
+    while ((pos = text.find(space_delimiter)) != string::npos)
+    {
+        words.push_back(text.substr(0, pos));
+        // cout <<pos;
+        text.erase(0, pos + space_delimiter.length());
+    }
 
+    for (const auto &str : words) {
+
+        aux++;
+        if(aux==n)
+        {
+           //aux =+1;
+          // cout<<str;
+           reultado= str;
+           retornook = true;
+           //textimpar = textimpar + " " + str;
+        }
+    }
+
+    if(retornook != true)
+    {
+        //se devuelve la cadena vacía
+        reultado= "";
+        //cout<<"";
+    }
+    return retornook;
+}
 
 int main()
 {
@@ -57,8 +91,14 @@ int main()
    cout<<endl;
    cout<<"Ingrese el número"<<endl;
    cin>>n;
-   obtenerPalabra(text,n,resultado);
-   cout<<"Imprimiendo resultado.."<<endl;
+   if(obtenerPalabra(text,n,resultado))
+   {
+     cout<<"Imprimiendo resultado.."<<endl;
+   }
+   else{
+    cout<<"No se encontró ninguna palabra para ese número"<<endl;
+   }
+
    cout<<resultado;
    return 0;
 }
