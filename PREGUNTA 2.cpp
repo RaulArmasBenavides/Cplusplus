@@ -73,7 +73,6 @@ public:
 			}
 			n->sgte=NULL;
 		}
-/*
 void concatenarLista(LISTA *raiz1, LISTA *raiz2, LISTA *&raiz3)
 		{
 LISTA *p,*q;
@@ -90,7 +89,7 @@ ingresarLista(raiz3,q->info);
 q=q->sgte;
 }
 }
-*/
+
     void mostrarLista(LISTA *raiz)
     {
         LISTA *p=raiz;
