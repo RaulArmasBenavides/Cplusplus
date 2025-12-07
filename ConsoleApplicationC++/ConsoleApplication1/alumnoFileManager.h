@@ -1,64 +1,105 @@
 #pragma once
-#include<iostream>
-#include<fstream>
-#include<string.h>
-#include<stdio.h>
-using namespace std;
+#include <iostream>
+#include <fstream>
+#include <cstring>   
+ 
 const int N = 50;
-//Declarar la estructura
 struct alumno
 {
-	char nombre[15], apellido[15], fec[35], sexo[10], estado[12];
+    char nombre[15];
+    char apellido[15];
+    char fec[35];   
+    char sexo[10];
+    char estado[12]; 
 };
+
 class alumnoFileManager
 {
-	void Ordenar(alumno x[], int n)
-	{
-		int i, j; alumno t;
-		for (i = 0;i < n - 1;i++)
-			for (j = i + 1;j < n;j++)
-				if (strcmp(x[i].c, x[j].c) > 0)
-				{
-					t = x[i];
-					x[i] = x[j];
-					x[j] = t;
-				}
-	}
-	void LeerGuardar(ofstream& f1)
-	{
-		alumno a[N];int n, i;
-		cout << "Numero de Alumnos a procesar:";
-		cin >> n;
-		for (i = 0;i < n;i++)
-		{
-			cout << "Procesando alumno #" << i + 1 << endl;
-			cout << "Nombre:";fflush(stdin);gets(a[i].c);
-			cout << "Apelldio:";gets(a[i].tit);
-			cout << "Fecha (dd/mm/aaaa:";gets(a[i].fi);
-			cout << "Sexo (dd/mm/aaaa:";gets(a[i].fi);
-			cout << "Estado civil (dd/mm/aaaa:";gets(a[i].fi);
-		}
-		Ordenar(a, n);
-		f1.open("datos.txt");
-		//Grabando datos en el archivo
-		for (i = 0;i < n;i++)
-			f1 << a[i].c << " " << a[i].tit << " " << a[i].aut << " "
-			<< a[i].fi << " " << a[i].precio << " " << a[i].cant << endl;
-		f1.close();
-	}
+private:
+    // Ordenar alfabéticamente por apellido (o por nombre si prefieres)
+    //selection sort / intercambio
+    void Ordenar(alumno x[], int n)
+    {
+        int i, j;
+        alumno t;
+        for (i = 0; i < n - 1; i++)
+            for (j = i + 1; j < n; j++)
+                // aquí comparo por apellido; podrías usar x[i].nombre si quieres
+                if (strcmp(x[i].apellido, x[j].apellido) > 0)
+                {
+                    t = x[i];
+                    x[i] = x[j];
+                    x[j] = t;
+                }
+    }
 
-	void Listar(ifstream& f2)
-	{
-		char cad[180];
-		f2.open("Libros.txt");
-		f2.getline(cad, 180);
-		while (f2.eof() == false)
-		{
-			cout << cad << endl;
-			f2.getline(cad, 180);
-		}
-		f2.close();
-	}
+public:
+    void LeerGuardar(std::ofstream& f1)
+    {
+        alumno a[N];
+        int n, i;
 
+        std::cout << "Numero de Alumnos a procesar: ";
+        std::cin >> n;
+        std::cin.ignore(); // limpiar el salto de línea pendiente
+
+        for (i = 0; i < n; i++)
+        {
+            std::cout << "Procesando alumno #" << i + 1 << std::endl;
+            std::cout << "Nombre: ";
+            std::cin.getline(a[i].nombre, 15);
+            std::cout << "Apellido: ";
+            std::cin.getline(a[i].apellido, 15);
+            std::cout << "Fecha nacimiento (dd/mm/aaaa): ";
+            std::cin.getline(a[i].fec, 35);
+            std::cout << "Sexo: ";
+            std::cin.getline(a[i].sexo, 10);
+            std::cout << "Estado civil: ";
+            std::cin.getline(a[i].estado, 12);
+            std::cout << std::endl;
+        }
+
+        // Ordenar por apellido
+        Ordenar(a, n);
+
+        // Guardar datos en el archivo
+        f1.open("datos.txt");
+        if (!f1)
+        {
+            std::cout << "No se pudo abrir el archivo datos.txt para escritura" << std::endl;
+            return;
+        }
+
+        for (i = 0; i < n; i++)
+        {
+            f1 << a[i].nombre << " "
+                << a[i].apellido << " "
+                << a[i].fec << " "
+                << a[i].sexo << " "
+                << a[i].estado << std::endl;
+        }
+
+        f1.close();
+    }
+
+    void Listar(std::ifstream& f2)
+    {
+        char cad[180];
+
+        f2.open("datos.txt");   // mismo archivo que usamos al grabar
+        if (!f2)
+        {
+            std::cout << "No se pudo abrir el archivo datos.txt para lectura" << std::endl;
+            return;
+        }
+
+        f2.getline(cad, 180);
+        while (!f2.eof())
+        {
+            std::cout << cad << std::endl;
+            f2.getline(cad, 180);
+        }
+
+        f2.close();
+    }
 };
-
